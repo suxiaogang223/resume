@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="苏艺腾的在线简历" />
+    <title>苏艺腾 | 在线简历</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到正文</a>
+
+    <header class="header-line" role="banner">
+      <div class="header-line__left">
+        <span class="buffer-name">*Resume*</span>
+        <span class="header-sep">—</span>
+        <span class="header-hint">数据库与后端工程方向</span>
+      </div>
+      <div class="header-line__right">
+        <a class="header-link" href="mailto:suxiaogang223@icloud.com">Email</a>
+        <a class="header-link" href="tel:17358616578">Phone</a>
+        <a class="header-link" href="https://github.com/suxiaogang223" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <main id="content" class="buffer" role="main">
+      <section class="hero" id="top">
+        <div class="hero__grid">
+          <div class="hero__info">
+            <h1 class="hero__title">苏艺腾</h1>
+            <p class="hero__subtitle">数据库与后端工程师</p>
+            <p class="hero__summary">
+              具备数据库内核、大数据存储格式与高并发数据结构实践经验，专注于
+              C++/Rust 方向的系统工程开发。
+            </p>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-key">邮箱</span>
+                <a href="mailto:suxiaogang223@icloud.com">suxiaogang223@icloud.com</a>
+              </li>
+              <li>
+                <span class="contact-key">电话</span>
+                <a href="tel:17358616578">17358616578</a>
+              </li>
+              <li>
+                <span class="contact-key">GitHub</span>
+                <a href="https://github.com/suxiaogang223" target="_blank" rel="noreferrer">
+                  github.com/suxiaogang223
+                </a>
+              </li>
+              <li>
+                <span class="contact-key">所在地</span>
+                <span>杭州</span>
+              </li>
+            </ul>
+          </div>
+          <figure class="avatar-card">
+            <img src="assets/profile.png" alt="苏艺腾照片" loading="eager" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <h2>教育经历</h2>
+        <article class="entry">
+          <div class="entry__head">
+            <h3>电子科技大学</h3>
+            <span>2021.09 - 2024.06</span>
+          </div>
+          <p>计算机技术 硕士 · 成都</p>
+        </article>
+        <article class="entry">
+          <div class="entry__head">
+            <h3>河北工业大学</h3>
+            <span>2017.09 - 2021.06</span>
+          </div>
+          <p>计算机科学与技术 本科 · 天津</p>
+        </article>
+      </section>
+
+      <section class="section" id="skills">
+        <h2>专业技能</h2>
+        <ul class="list">
+          <li>参与分析型(AP)数据库内核开发(GaussDB)，系统学习 PostgreSQL 内核源码。</li>
+          <li>熟悉 C++ 和 Rust，有丰富工程经验，为 arrow-rs 与 datafusion 贡献过 commit。</li>
+          <li>具备 ORC/Parquet 相关开发经验，熟悉大数据存储与处理生态。</li>
+        </ul>
+      </section>
+
+      <section class="section" id="internship">
+        <h2>实习经历</h2>
+        <article class="entry">
+          <div class="entry__head">
+            <h3>华为云计算公司 · 实习生（AP项目域服务部门）</h3>
+            <span>2022.09 - 至今</span>
+          </div>
+          <p>杭州</p>
+          <ul class="list">
+            <li>完成 GaussDB 外表读写异步化，外表读取速度提升 7 倍，写入速度提升 1 倍。</li>
+            <li>使用无锁字典树优化缓存文件查询，查询时间减少 20%，内存占用减少 80%。</li>
+            <li>参与 Z-order 聚合实现与 ORC writer 重构，为异步调度增加统计埋点。</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section" id="projects">
+        <h2>项目经历</h2>
+        <article class="entry">
+          <div class="entry__head">
+            <h3>GaussDB(DWS) 的异步读写框架</h3>
+            <span>2023.01 - 2023.06</span>
+          </div>
+          <ul class="list">
+            <li>参考 seastar，将 I/O 操作抽象为 task 并统一调度，结果通过 future/promise 返回。</li>
+            <li>调度算法支持多用户按优先级分配带宽，并自适应增减工作线程数量。</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>GaussDB 中 Z-order 聚合的实现</h3>
+            <span>2022.09 - 2022.12</span>
+          </div>
+          <ul class="list">
+            <li>参考 Delta Lake 的 Z-order 实现，为 GaussDB 增加多维聚合能力。</li>
+            <li>实现分布式聚合函数，结合分布式蓄水池采样算法，降低排序开销。</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>GaussDB 中无锁字典树的实现</h3>
+            <span>2022.04 - 2022.07</span>
+          </div>
+          <ul class="list">
+            <li>
+              实现基于 Optimistic Lock Coupling 的 Adaptive Radix Tree，使用 EBR
+              进行内存管理，保障并发场景内存安全。
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>visual-java</h3>
+            <span>2021.03 - 2021.05</span>
+          </div>
+          <ul class="list">
+            <li>实现简易 Java 虚拟机，解析字节码并模拟 JVM 执行。</li>
+            <li>
+              项目地址：
+              <a href="https://hub.docker.com/repository/docker/lishizhen/visual-java-web/general" target="_blank" rel="noreferrer">
+                hub.docker.com/repository/docker/lishizhen/visual-java-web/general
+              </a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>baidu-translate</h3>
+            <span>2019.07 - 2019.08</span>
+          </div>
+          <ul class="list">
+            <li>实现 Emacs 翻译插件，调用百度翻译 API，将翻译能力集成到编辑器。</li>
+            <li>
+              收录地址：
+              <a href="https://melpa.org/#/baidu-translate" target="_blank" rel="noreferrer">
+                melpa.org/#/baidu-translate
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="emacs-bars">
+      <div class="mode-line">
+        <div class="mode-line__left">
+          <span class="ml-buffer">*Resume*</span>
+          <span class="ml-sep">|</span>
+          <span class="ml-major">Online CV</span>
+        </div>
+        <div class="mode-line__right">
+          <span class="ml-position">Top 1%</span>
+          <span class="ml-sep">·</span>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+      <div class="minibuffer">
+        <span class="minibuffer__prompt">MiniBuf:</span>
+        <span class="minibuffer__message">This project ships HTML only. Export PDF via browser print.</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+#+TITLE: 苏艺腾
+#+AUTHOR: 苏艺腾
+#+LANGUAGE: zh-CN
+#+OPTIONS: toc:nil num:nil ^:{}
+#+HTML_HEAD: <meta charset="utf-8">
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
+#+HTML_HEAD: <link rel="stylesheet" href="assets/style.css">
+#+LATEX_COMPILER: xelatex
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
+#+LATEX_HEADER: \usepackage[a4paper,margin=1.8cm]{geometry}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist[itemize]{leftmargin=1.5em}
+#+LATEX_HEADER: \setlist[enumerate]{leftmargin=1.8em}
+#+LATEX_HEADER: \pagestyle{empty}
+#+LATEX_HEADER: \setlength{\parindent}{0pt}
+
+* 联系方式
+- 手机：17358616578
+- 邮箱：suxiaogang223@icloud.com
+- 所在地：杭州
+- 年龄/性别：24岁 / 男
+
+* 教育经历
+** 电子科技大学
+- 学历：计算机技术，硕士
+- 时间：2021年09月 - 2024年06月
+- 地点：成都
+
+** 河北工业大学
+- 学历：计算机科学与技术，本科
+- 时间：2017年09月 - 2021年06月
+- 地点：天津
+
+* 专业技能
+1. 参与分析型(AP)数据库内核开发(GaussDB)，系统学习过 PostgreSQL 的内核源码。
+2. 擅长 C++ 和 Rust 语言，有丰富的 C++ 工程经验，为开源项目 arrow-rs 和 datafusion 贡献过 commit。
+3. 做过大数据存储格式 ORC/Parquet 的相关开发(GaussDB 中 ORC writer)，对大数据生态较熟悉。
+
+* 实习经历
+** 华为云计算公司（实习生，AP项目域服务部门）
+- 时间：2022年09月 - 至今
+- 地点：杭州
+- 工作内容：
+  - GaussDB 外表读写异步化，外表读取速度提升 7 倍，写入速度提升 1 倍。
+  - 使用无锁字典树优化 GaussDB 缓存文件查询，查询时间减少 20%，内存占用减少 80%。
+  - 参与 GaussDB 中 Z-order 聚合实现、ORC writer 重构，为异步调度增加统计信息埋点。
+
+* 项目经历
+** GaussDB(DWS) 的异步读写框架
+- 时间：2023年01月 - 2023年06月
+- 参考 seastar，将 GaussDB 中 I/O 操作抽象为 task，统一提交给全局调度器，调度器再将 task 分发给专门工作线程执行，结果通过 future/promise 返回。
+- 调度算法支持多用户按优先级分配带宽，以及自适应增减工作线程数量。
+
+** GaussDB 中 Z-order 聚合的实现
+- 时间：2022年09月 - 2022年12月
+- 参考了 Delta Lake 中 Z-order 的实现，为 GaussDB 提供多维聚合能力。
+- 实现分布式聚合函数，并使用分布式蓄水池采样算法，避免排序带来的高昂开销。
+
+** GaussDB 中无锁字典树的实现
+- 时间：2022年04月 - 2022年07月
+- 实现基于 Optimistic Lock Coupling 的无锁数据结构 Adaptive Radix Tree，使用 EBR(Epoch Based Reclamation) 做内存管理，保证并发场景内存安全。
+
+** visual-java
+- 时间：2021年03月 - 2021年05月
+- 一个简单的 Java 虚拟机，读取并解析字节码文件并模拟 JVM 执行，在执行过程中将内部变量展示到可视化界面。
+- 项目地址：https://hub.docker.com/repository/docker/lishizhen/visual-java-web/general
+
+** baidu-translate
+- 时间：2019年07月 - 2019年08月
+- 一个 Emacs 翻译插件，调用百度翻译 API，将百度翻译功能集成到 Emacs。
+- 使用 Lisp 编写，被 Emacs 软件源 MELPA 收录：https://melpa.org/#/baidu-translate
