@@ -30,10 +30,11 @@
         <div class="hero__grid">
           <div class="hero__info">
             <h1 class="hero__title">苏艺腾</h1>
-            <p class="hero__subtitle">数据库与后端工程师</p>
+            <p class="hero__subtitle">数据湖开发工程师（SelectDB）</p>
             <p class="hero__summary">
-              具备数据库内核、大数据存储格式与高并发数据结构实践经验，专注于
-              C++/Rust 方向的系统工程开发。
+              2 年 Apache Doris 数据湖开发经验，长期负责 Hive/Iceberg/Paimon/Hudi
+              相关能力建设。重点工作包括 Iceberg 表治理、Iceberg/Paimon system table
+              查询支持，以及数据湖查询性能优化。
             </p>
             <ul class="contact-list">
               <li>
@@ -97,116 +98,117 @@
         </div>
       </section>
 
-      <section class="section" id="zh-education">
-        <h2>教育经历</h2>
+      <section class="section" id="zh-internship">
+        <h2>工作经历</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>电子科技大学</h3>
-            <span>2021.09 - 2024.06</span>
+            <h3>SelectDB · 数据湖开发工程师</h3>
+            <span>2024.07 - 至今</span>
           </div>
-          <p>计算机技术 硕士 · 成都</p>
+          <p>成都</p>
+          <ul class="list">
+            <li>负责 Doris 在 Hive/Iceberg/Paimon/Hudi 场景下的能力建设和兼容性问题处理。</li>
+            <li>实现 Iceberg procedure 执行框架，并在此基础上落地 rewrite_data_files 等表治理能力。</li>
+            <li>完成 Iceberg/Paimon system table 查询能力建设，并持续完善回归测试。</li>
+            <li>持续推进数据湖查询性能优化，包括 manifest 缓存、count pushdown、Paimon deletion vector 原生查询与动态分区裁剪。</li>
+          </ul>
         </article>
+      </section>
+
+      <section class="section" id="zh-projects">
+        <h2>核心项目</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>河北工业大学</h3>
-            <span>2017.09 - 2021.06</span>
+            <h3>Iceberg 表治理能力建设（procedure + rewrite_data_files）</h3>
+            <span>2025.09 - 2026.02</span>
           </div>
-          <p>计算机科学与技术 本科 · 天津</p>
+          <ul class="list">
+            <li>先在 Doris 里搭建 Iceberg procedure 执行框架，把表治理动作放到统一调用链路里，方便后续继续扩展。</li>
+            <li>在这个框架上重点实现 rewrite_data_files，用于表优化和小文件整理，并持续改进执行稳定性。</li>
+            <li>持续完善治理动作相关回归测试，保障功能迭代稳定。</li>
+            <li>
+              相关 PR：
+              <a href="https://github.com/apache/doris/pull/56413" target="_blank" rel="noreferrer">#56413</a>
+              /
+              <a href="https://github.com/apache/doris/pull/56638" target="_blank" rel="noreferrer">#56638</a>
+              /
+              <a href="https://github.com/apache/doris/pull/60063" target="_blank" rel="noreferrer">#60063</a>
+              /
+              <a href="https://github.com/apache/doris/pull/59979" target="_blank" rel="noreferrer">#59979</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>Iceberg/Paimon System Table 查询能力建设</h3>
+            <span>2025.05 - 2026.02</span>
+          </div>
+          <ul class="list">
+            <li>完成 Iceberg 和 Paimon 的 system table 查询支持，让元数据排查和问题定位更直接。</li>
+            <li>把 Paimon system table 调整到 native table 执行路径，减少中间转换带来的复杂度。</li>
+            <li>持续完善 system table 相关回归测试，保障后续功能迭代稳定。</li>
+            <li>
+              相关 PR：
+              <a href="https://github.com/apache/doris/pull/51190" target="_blank" rel="noreferrer">#51190</a>
+              /
+              <a href="https://github.com/apache/doris/pull/60279" target="_blank" rel="noreferrer">#60279</a>
+              /
+              <a href="https://github.com/apache/doris/pull/60556" target="_blank" rel="noreferrer">#60556</a>
+              /
+              <a href="https://github.com/apache/doris/pull/58298" target="_blank" rel="noreferrer">#58298</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>数据湖查询性能优化</h3>
+            <span>2025.07 - 至今</span>
+          </div>
+          <ul class="list">
+            <li>针对 Iceberg 查询链路做性能优化，引入并迭代 manifest 级缓存，减少元数据读取和解析开销。</li>
+            <li>在 Iceberg/Paimon 查询路径优化 count pushdown，减少不必要的数据读取与计算开销。</li>
+            <li>支持 Paimon 表的 deletion vector 原生查询，优化查询性能。</li>
+            <li>实现数据湖场景下的动态分区裁剪能力，减少无效分区扫描，提升查询性能。</li>
+            <li>
+              相关 PR：
+              <a href="https://github.com/apache/doris/pull/59056" target="_blank" rel="noreferrer">#59056</a>
+              /
+              <a href="https://github.com/apache/doris/pull/53399" target="_blank" rel="noreferrer">#53399</a>
+              /
+              <a href="https://github.com/apache/doris/pull/46911" target="_blank" rel="noreferrer">#46911</a>
+              /
+              <a href="https://github.com/apache/doris/pull/34743" target="_blank" rel="noreferrer">#34743</a>
+            </li>
+          </ul>
         </article>
       </section>
 
       <section class="section" id="zh-skills">
         <h2>专业技能</h2>
         <ul class="list">
-          <li>参与分析型(AP)数据库内核开发(GaussDB)，系统学习 PostgreSQL 内核源码。</li>
-          <li>熟悉 C++ 和 Rust，有丰富工程经验，为 arrow-rs 与 datafusion 贡献过 commit。</li>
-          <li>具备 ORC/Parquet 相关开发经验，熟悉大数据存储与处理生态。</li>
+          <li>主力语言 C++/Java，业余使用 Rust 开发一些数据湖相关的开源项目，熟悉数据库内核开发。</li>
+          <li>熟悉 Iceberg、Paimon、Hudi、Hive 等数据湖格式与元数据模型，具备多目录（Multi-Catalog）开发实践。</li>
+          <li>熟悉 ORC、Parquet、Arrow 等开放文件格式，并参与相关开发。</li>
+          <li>具备元数据缓存、分区裁剪、文件切分与小文件治理等性能优化实践的经验。</li>
+          <li>开源贡献：除持续参与 Apache Doris 外，也向 Apache ORC、Apache Hudi、paimon-cpp 等上游项目反馈并提交代码。</li>
         </ul>
       </section>
 
-      <section class="section" id="zh-internship">
-        <h2>实习经历</h2>
+      <section class="section" id="zh-education">
+        <h2>教育经历</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>华为云计算公司 · 实习生（AP项目域服务部门）</h3>
-            <span>2022.09 - 至今</span>
+            <h3>电子科技大学 · 计算机技术 硕士</h3>
+            <span>2021.09 - 2024.06</span>
           </div>
-          <p>杭州</p>
-          <ul class="list">
-            <li>完成 GaussDB 外表读写异步化，外表读取速度提升 7 倍，写入速度提升 1 倍。</li>
-            <li>使用无锁字典树优化缓存文件查询，查询时间减少 20%，内存占用减少 80%。</li>
-            <li>参与 Z-order 聚合实现与 ORC writer 重构，为异步调度增加统计埋点。</li>
-          </ul>
         </article>
-      </section>
-
-      <section class="section" id="zh-projects">
-        <h2>项目经历</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>GaussDB(DWS) 的异步读写框架</h3>
-            <span>2023.01 - 2023.06</span>
+            <h3>河北工业大学 · 计算机科学与技术 本科</h3>
+            <span>2017.09 - 2021.06</span>
           </div>
-          <ul class="list">
-            <li>参考 seastar，将 I/O 操作抽象为 task 并统一调度，结果通过 future/promise 返回。</li>
-            <li>调度算法支持多用户按优先级分配带宽，并自适应增减工作线程数量。</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>GaussDB 中 Z-order 聚合的实现</h3>
-            <span>2022.09 - 2022.12</span>
-          </div>
-          <ul class="list">
-            <li>参考 Delta Lake 的 Z-order 实现，为 GaussDB 增加多维聚合能力。</li>
-            <li>实现分布式聚合函数，结合分布式蓄水池采样算法，降低排序开销。</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>GaussDB 中无锁字典树的实现</h3>
-            <span>2022.04 - 2022.07</span>
-          </div>
-          <ul class="list">
-            <li>
-              实现基于 Optimistic Lock Coupling 的 Adaptive Radix Tree，使用 EBR
-              进行内存管理，保障并发场景内存安全。
-            </li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>visual-java</h3>
-            <span>2021.03 - 2021.05</span>
-          </div>
-          <ul class="list">
-            <li>实现简易 Java 虚拟机，解析字节码并模拟 JVM 执行。</li>
-            <li>
-              项目地址：
-              <a href="https://hub.docker.com/repository/docker/lishizhen/visual-java-web/general" target="_blank" rel="noreferrer">
-                hub.docker.com/repository/docker/lishizhen/visual-java-web/general
-              </a>
-            </li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>baidu-translate</h3>
-            <span>2019.07 - 2019.08</span>
-          </div>
-          <ul class="list">
-            <li>实现 Emacs 翻译插件，调用百度翻译 API，将翻译能力集成到编辑器。</li>
-            <li>
-              收录地址：
-              <a href="https://melpa.org/#/baidu-translate" target="_blank" rel="noreferrer">
-                melpa.org/#/baidu-translate
-              </a>
-            </li>
-          </ul>
         </article>
       </section>
       </div>
@@ -215,11 +217,12 @@
         <div class="hero__grid">
           <div class="hero__info">
             <h1 class="hero__title">Yiteng Su</h1>
-            <p class="hero__subtitle">Database and Backend Engineer</p>
+            <p class="hero__subtitle">Data Lake Development Engineer (SelectDB)</p>
             <p class="hero__summary">
-              Hands-on experience in database kernels, big-data storage formats,
-              and high-concurrency data structures, with a focus on
-              system-level engineering in C++ and Rust.
+              2 years of Apache Doris data lake development experience. Focused
+              on capability building for Hive/Iceberg/Paimon/Hudi, with core
+              work in Iceberg table maintenance, Iceberg/Paimon system table
+              query support, and data lake query performance optimization.
             </p>
             <ul class="contact-list">
               <li>
@@ -283,116 +286,117 @@
         </div>
       </section>
 
-      <section class="section" id="en-education">
-        <h2>Education</h2>
+      <section class="section" id="en-internship">
+        <h2>Experience</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>University of Electronic Science and Technology of China</h3>
-            <span>2021.09 - 2024.06</span>
+            <h3>SelectDB · Data Lake Development Engineer</h3>
+            <span>2024.07 - Present</span>
           </div>
-          <p>M.Eng. in Computer Technology · Chengdu</p>
+          <p>Chengdu</p>
+          <ul class="list">
+            <li>Responsible for capability development and compatibility fixes for Doris in Hive/Iceberg/Paimon/Hudi scenarios.</li>
+            <li>Built an Iceberg procedure execution framework and implemented table-maintenance capabilities such as rewrite_data_files on top of it.</li>
+            <li>Delivered Iceberg/Paimon system table query support and continuously improved regression coverage.</li>
+            <li>Continuously optimized data lake query performance, including manifest cache, count pushdown, native Paimon deletion vector queries, and dynamic partition pruning.</li>
+          </ul>
         </article>
+      </section>
+
+      <section class="section" id="en-projects">
+        <h2>Key Projects</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>Hebei University of Technology</h3>
-            <span>2017.09 - 2021.06</span>
+            <h3>Iceberg Table Maintenance (procedure + rewrite_data_files)</h3>
+            <span>2025.09 - 2026.02</span>
           </div>
-          <p>B.Eng. in Computer Science and Technology · Tianjin</p>
+          <ul class="list">
+            <li>Built an Iceberg procedure execution framework in Doris to provide a unified entry for maintenance actions and later extensions.</li>
+            <li>Implemented rewrite_data_files on top of the framework for table optimization and small-file compaction, and continuously improved execution stability.</li>
+            <li>Continuously improved regression tests around maintenance actions to keep iterations stable.</li>
+            <li>
+              PRs:
+              <a href="https://github.com/apache/doris/pull/56413" target="_blank" rel="noreferrer">#56413</a>
+              /
+              <a href="https://github.com/apache/doris/pull/56638" target="_blank" rel="noreferrer">#56638</a>
+              /
+              <a href="https://github.com/apache/doris/pull/60063" target="_blank" rel="noreferrer">#60063</a>
+              /
+              <a href="https://github.com/apache/doris/pull/59979" target="_blank" rel="noreferrer">#59979</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>Iceberg/Paimon System Table Query Support</h3>
+            <span>2025.05 - 2026.02</span>
+          </div>
+          <ul class="list">
+            <li>Delivered system table query support for both Iceberg and Paimon, making metadata troubleshooting and debugging more direct.</li>
+            <li>Moved the Paimon system table path to native-table execution to reduce conversion complexity.</li>
+            <li>Continuously improved regression tests for system table features to keep later iterations stable.</li>
+            <li>
+              PRs:
+              <a href="https://github.com/apache/doris/pull/51190" target="_blank" rel="noreferrer">#51190</a>
+              /
+              <a href="https://github.com/apache/doris/pull/60279" target="_blank" rel="noreferrer">#60279</a>
+              /
+              <a href="https://github.com/apache/doris/pull/60556" target="_blank" rel="noreferrer">#60556</a>
+              /
+              <a href="https://github.com/apache/doris/pull/58298" target="_blank" rel="noreferrer">#58298</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3>Data Lake Query Performance Optimization</h3>
+            <span>2025.07 - Present</span>
+          </div>
+          <ul class="list">
+            <li>Optimized the Iceberg query path by introducing and iterating manifest-level cache to reduce metadata read and parse overhead.</li>
+            <li>Improved count pushdown in Iceberg/Paimon query paths to reduce unnecessary data reads and compute overhead.</li>
+            <li>Added native query support for Paimon deletion vectors to improve query performance.</li>
+            <li>Implemented dynamic partition pruning for data lake scenarios to reduce unnecessary partition scans and improve query performance.</li>
+            <li>
+              PRs:
+              <a href="https://github.com/apache/doris/pull/59056" target="_blank" rel="noreferrer">#59056</a>
+              /
+              <a href="https://github.com/apache/doris/pull/53399" target="_blank" rel="noreferrer">#53399</a>
+              /
+              <a href="https://github.com/apache/doris/pull/46911" target="_blank" rel="noreferrer">#46911</a>
+              /
+              <a href="https://github.com/apache/doris/pull/34743" target="_blank" rel="noreferrer">#34743</a>
+            </li>
+          </ul>
         </article>
       </section>
 
       <section class="section" id="en-skills">
         <h2>Technical Skills</h2>
         <ul class="list">
-          <li>Contributed to analytical (AP) database kernel development in GaussDB and studied PostgreSQL internals in depth.</li>
-          <li>Proficient in C++ and Rust with strong engineering practice; contributed commits to arrow-rs and DataFusion.</li>
-          <li>Hands-on experience with ORC/Parquet and familiarity with big-data storage and processing ecosystems.</li>
+          <li>Primary languages: C++/Java. I also use Rust in spare time to build data-lake-related open-source projects, with solid database kernel development knowledge.</li>
+          <li>Familiar with data lake formats and metadata models such as Iceberg, Paimon, Hudi, and Hive, with hands-on multi-catalog development experience.</li>
+          <li>Familiar with open file formats including ORC, Parquet, and Arrow, and have participated in related development.</li>
+          <li>Hands-on experience in performance optimization practices such as metadata caching, partition pruning, file split planning, and small-file governance.</li>
+          <li>Open-source contributions: besides ongoing work in Apache Doris, I also submit fixes and code contributions to upstream projects including Apache ORC, Apache Hudi, and paimon-cpp.</li>
         </ul>
       </section>
 
-      <section class="section" id="en-internship">
-        <h2>Internship Experience</h2>
+      <section class="section" id="en-education">
+        <h2>Education</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>Huawei Cloud Computing · Intern (AP Domain Service Team)</h3>
-            <span>2022.09 - Present</span>
+            <h3>University of Electronic Science and Technology of China · M.Eng. in Computer Technology</h3>
+            <span>2021.09 - 2024.06</span>
           </div>
-          <p>Hangzhou</p>
-          <ul class="list">
-            <li>Implemented asynchronous external table read/write in GaussDB, achieving 7x faster reads and 1x improvement in writes.</li>
-            <li>Optimized cache file lookup with a lock-free trie, reducing query latency by 20% and memory usage by 80%.</li>
-            <li>Participated in Z-order aggregation implementation and ORC writer refactoring; added observability metrics for async scheduling.</li>
-          </ul>
         </article>
-      </section>
-
-      <section class="section" id="en-projects">
-        <h2>Project Experience</h2>
         <article class="entry">
           <div class="entry__head">
-            <h3>Asynchronous Read/Write Framework in GaussDB (DWS)</h3>
-            <span>2023.01 - 2023.06</span>
+            <h3>Hebei University of Technology · B.Eng. in Computer Science and Technology</h3>
+            <span>2017.09 - 2021.06</span>
           </div>
-          <ul class="list">
-            <li>Inspired by seastar, abstracted I/O operations as tasks with a unified scheduler and future/promise results.</li>
-            <li>Scheduler supports multi-tenant bandwidth allocation by priority and adaptive worker-thread scaling.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>Z-order Aggregation Implementation in GaussDB</h3>
-            <span>2022.09 - 2022.12</span>
-          </div>
-          <ul class="list">
-            <li>Implemented multi-dimensional clustering for GaussDB based on Delta Lake's Z-order approach.</li>
-            <li>Built distributed aggregate functions with distributed reservoir sampling to reduce sorting overhead.</li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>Lock-Free Trie Implementation in GaussDB</h3>
-            <span>2022.04 - 2022.07</span>
-          </div>
-          <ul class="list">
-            <li>
-              Implemented an Adaptive Radix Tree based on Optimistic Lock Coupling;
-              used EBR for memory reclamation to ensure concurrency safety.
-            </li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>visual-java</h3>
-            <span>2021.03 - 2021.05</span>
-          </div>
-          <ul class="list">
-            <li>Implemented a lightweight Java VM to parse bytecode and emulate JVM execution.</li>
-            <li>
-              Project:
-              <a href="https://hub.docker.com/repository/docker/lishizhen/visual-java-web/general" target="_blank" rel="noreferrer">
-                hub.docker.com/repository/docker/lishizhen/visual-java-web/general
-              </a>
-            </li>
-          </ul>
-        </article>
-
-        <article class="entry">
-          <div class="entry__head">
-            <h3>baidu-translate</h3>
-            <span>2019.07 - 2019.08</span>
-          </div>
-          <ul class="list">
-            <li>Built an Emacs translation plugin using Baidu Translation API and integrated translation directly into the editor.</li>
-            <li>
-              Listed on:
-              <a href="https://melpa.org/#/baidu-translate" target="_blank" rel="noreferrer">
-                melpa.org/#/baidu-translate
-              </a>
-            </li>
-          </ul>
         </article>
       </section>
       </div>
@@ -404,10 +408,10 @@
           <span class="status-buffer">*Resume*</span>
           <span class="status-sep">|</span>
           <a class="status-link" data-nav-key="top" href="#zh-top">顶部</a>
-          <a class="status-link" data-nav-key="education" href="#zh-education">教育</a>
+          <a class="status-link" data-nav-key="internship" href="#zh-internship">工作</a>
+          <a class="status-link" data-nav-key="projects" href="#zh-projects">核心项目</a>
           <a class="status-link" data-nav-key="skills" href="#zh-skills">技能</a>
-          <a class="status-link" data-nav-key="internship" href="#zh-internship">实习</a>
-          <a class="status-link" data-nav-key="projects" href="#zh-projects">项目</a>
+          <a class="status-link" data-nav-key="education" href="#zh-education">教育</a>
         </div>
         <div class="status-line__right">
           <span class="status-zone" id="status-progress-zone" aria-hidden="true">·</span>
