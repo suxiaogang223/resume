@@ -8,6 +8,7 @@ serve:
 check:
 	test -f site/index.html
 	test -f site/assets/style.css
+	test -f site/assets/ui.js
 	test -f site/assets/profile.png
 	test -f site/.nojekyll
 

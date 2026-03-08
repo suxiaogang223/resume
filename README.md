@@ -6,8 +6,9 @@
 
 ## 目录结构
 
-- `site/index.html`：在线简历页面（唯一维护入口）
+- `site/index.html`：单页双语简历（按钮切换中文/英文）
 - `site/assets/style.css`：页面样式
+- `site/assets/ui.js`：顶部按钮逻辑（主题切换 + 同页语言切换）
 - `site/assets/profile.png`：简历照片
 - `site/.nojekyll`：确保 GitHub Pages 按静态文件直接发布
 - `.github/workflows/pages.yml`：GitHub Pages 自动构建与发布
@@ -40,7 +41,17 @@ make clean
 
 ## 维护约定
 
-- 简历内容直接改 `site/index.html`
+- 简历内容统一维护在 `site/index.html`（含中英两套内容块）
 - 样式直接改 `site/assets/style.css`
+- 顶部按钮交互逻辑改 `site/assets/ui.js`
 - 更换照片时覆盖 `site/assets/profile.png`
 - 本仓库不实现 PDF 导出逻辑
+
+## 浏览器导出 PDF 建议
+
+- 项目已内置 `@media print` 的 A4 紧凑样式（优先减少分页）
+- Chrome/Edge 打印推荐：
+  - `Paper size`: `A4`
+  - `Margins`: `Default`
+  - `Scale`: `100%`（若仍分页过多可降到 `95%`）
+  - `Background graphics`: 建议开启（可保留页面设计风格）
