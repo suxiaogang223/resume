@@ -30,7 +30,7 @@
         <div class="hero__grid">
           <div class="hero__info">
             <h1 class="hero__title">苏艺腾</h1>
-            <p class="hero__subtitle">数据湖开发工程师（SelectDB）</p>
+            <p class="hero__subtitle">数据湖开发工程师</p>
             <p class="hero__summary">
               2 年 Apache Doris 数据湖开发经验，长期负责 Hive/Iceberg/Paimon/Hudi
               相关能力建设。重点工作包括 Iceberg 表治理、Iceberg/Paimon system table
@@ -113,6 +113,18 @@
             <li>持续推进数据湖查询性能优化，包括 manifest 缓存、count pushdown、Paimon deletion vector 原生查询与动态分区裁剪。</li>
           </ul>
         </article>
+        <article class="entry">
+          <div class="entry__head">
+            <h3>华为云计算公司 · 数据库研发（实习）</h3>
+            <span>2022.09 - 2024.06</span>
+          </div>
+          <p>杭州</p>
+          <ul class="list">
+            <li>完成 GaussDB 外表读写异步化，外表读取速度提升 7 倍，写入速度提升 1 倍。</li>
+            <li>使用无锁字典树优化缓存文件查询，查询时间减少 20%，内存占用减少 80%。</li>
+            <li>参与 Z-order 聚合实现与 ORC writer 重构，为异步调度增加统计埋点。</li>
+          </ul>
+        </article>
       </section>
 
       <section class="section" id="zh-projects">
@@ -125,7 +137,6 @@
           <ul class="list">
             <li>先在 Doris 里搭建 Iceberg procedure 执行框架，把表治理动作放到统一调用链路里，方便后续继续扩展。</li>
             <li>在这个框架上重点实现 rewrite_data_files，用于表优化和小文件整理，并持续改进执行稳定性。</li>
-            <li>持续完善治理动作相关回归测试，保障功能迭代稳定。</li>
             <li>
               相关 PR：
               <a href="https://github.com/apache/doris/pull/56413" target="_blank" rel="noreferrer">#56413</a>
@@ -147,7 +158,6 @@
           <ul class="list">
             <li>完成 Iceberg 和 Paimon 的 system table 查询支持，让元数据排查和问题定位更直接。</li>
             <li>把 Paimon system table 调整到 native table 执行路径，减少中间转换带来的复杂度。</li>
-            <li>持续完善 system table 相关回归测试，保障后续功能迭代稳定。</li>
             <li>
               相关 PR：
               <a href="https://github.com/apache/doris/pull/51190" target="_blank" rel="noreferrer">#51190</a>
@@ -217,7 +227,7 @@
         <div class="hero__grid">
           <div class="hero__info">
             <h1 class="hero__title">Yiteng Su</h1>
-            <p class="hero__subtitle">Data Lake Development Engineer (SelectDB)</p>
+            <p class="hero__subtitle">Data Lake Development Engineer</p>
             <p class="hero__summary">
               2 years of Apache Doris data lake development experience. Focused
               on capability building for Hive/Iceberg/Paimon/Hudi, with core
@@ -299,6 +309,18 @@
             <li>Built an Iceberg procedure execution framework and implemented table-maintenance capabilities such as rewrite_data_files on top of it.</li>
             <li>Delivered Iceberg/Paimon system table query support and continuously improved regression coverage.</li>
             <li>Continuously optimized data lake query performance, including manifest cache, count pushdown, native Paimon deletion vector queries, and dynamic partition pruning.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry__head">
+            <h3>Huawei Cloud Computing · Database R&amp;D (Intern)</h3>
+            <span>2022.09 - 2024.06</span>
+          </div>
+          <p>Hangzhou</p>
+          <ul class="list">
+            <li>Implemented asynchronous external table read/write in GaussDB, achieving 7x faster reads and 1x faster writes.</li>
+            <li>Optimized cache file lookup with a lock-free trie, reducing lookup time by 20% and memory usage by 80%.</li>
+            <li>Contributed to Z-order aggregation implementation and ORC writer refactoring, and added observability metrics for async scheduling.</li>
           </ul>
         </article>
       </section>
