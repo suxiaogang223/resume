@@ -60,7 +60,7 @@ make serve
 ## 👨‍💻 关于我
 
 - **姓名**：苏艺腾 (Yiteng Su)
-- **角色**：数据湖开发工程师 @ SelectDB (Apache Doris)
+- **角色**：Apache Doris Committer / 数据湖开发工程师 @ SelectDB
 - **核心领域**：Hive / Iceberg / Paimon / Hudi 数据湖能力建设，数据库内核开发。
 - **联系方式**：[suxiaogang223@icloud.com](mailto:suxiaogang223@icloud.com)
 

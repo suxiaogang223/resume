@@ -60,7 +60,7 @@ Automated deployment to GitHub Pages via GitHub Actions.
 ## 👨‍💻 About Me
 
 - **Name**: Yiteng Su (苏艺腾)
-- **Role**: Data Lake Development Engineer @ SelectDB (Apache Doris)
+- **Role**: Apache Doris Committer / Data Lake Development Engineer @ SelectDB
 - **Core Focus**: Hive / Iceberg / Paimon / Hudi data lake integration and database kernel development.
 - **Contact**: [suxiaogang223@icloud.com](mailto:suxiaogang223@icloud.com)
 
